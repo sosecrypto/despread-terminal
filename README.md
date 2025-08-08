@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# DeSpread Terminal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+암호화폐 미디어 분석 대시보드 - Bloomberg Terminal 스타일의 웹 인터페이스
 
-## Available Scripts
+## 🚀 기능
 
-In the project directory, you can run:
+- 실시간 암호화폐 미디어 분석
+- 월별 기사 통계
+- 상위 미디어 제공업체 분석
+- 총 미디어 추적 현황
+- Bloomberg Terminal 스타일 UI
 
-### `npm start`
+## 🛠️ 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React 19
+- TypeScript
+- Chart.js
+- CSS3
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📦 설치 및 실행
 
-### `npm test`
+### 개발 환경 설정
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# 의존성 설치
+npm install
 
-### `npm run build`
+# 개발 서버 실행
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 프로덕션 빌드
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+```
 
-### `npm run eject`
+## 🚀 배포
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+이 프로젝트는 Vercel을 통해 배포됩니다:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. GitHub 저장소에 코드를 푸시
+2. Vercel에서 GitHub 저장소 연결
+3. 자동 배포 완료
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📁 프로젝트 구조
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+src/
+├── components/
+│   ├── panels/           # 대시보드 패널 컴포넌트
+│   ├── TerminalHeader.tsx
+│   ├── TerminalMain.tsx
+│   └── TerminalFooter.tsx
+├── App.tsx              # 메인 앱 컴포넌트
+└── index.tsx            # 앱 진입점
+```
 
-## Learn More
+## 🤝 기여
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
