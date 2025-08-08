@@ -1,8 +1,10 @@
-/* Terminal Main Content */
+/* Terminal Main Content - Bloomberg Terminal Style */
 .terminal-main {
-  padding: 24px;
+  padding: 0;
   min-height: calc(100vh - 120px);
   flex: 1;
+  background: #000000;
+  overflow: hidden;
 }
 
 .terminal-grid {
@@ -11,6 +13,8 @@
   grid-template-rows: 1fr 1fr;
   gap: 24px;
   height: calc(100vh - 200px);
+  padding: 24px;
+  background: #000000;
 }
 
 /* Terminal Panels */
@@ -21,12 +25,22 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.terminal-panel:hover {
+  border-color: #00ff88;
+  box-shadow: 0 6px 12px rgba(0, 255, 136, 0.1);
 }
 
 .panel-header {
   background: #0f0f0f;
   padding: 16px 20px;
   border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .panel-header h3 {
@@ -43,6 +57,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  background: #1a1a1a;
+  position: relative;
 }
 
 /* Panel Positioning */
@@ -65,16 +81,86 @@
 canvas {
   width: 100% !important;
   height: 100% !important;
+  max-height: 100% !important;
+}
+
+/* Data Visualization */
+.metric-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.metric-change {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ff88;
+}
+
+.metric-change.negative {
+  color: #ff4444;
+}
+
+.media-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.media-logo {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.media-logo:hover {
+  background: #00ff88;
+  color: #000;
+  border-color: #00ff88;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 .terminal-panel {
   animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.metric-value {
+  animation: pulse 2s infinite;
 }
 
 /* Responsive Design */
@@ -82,6 +168,8 @@ canvas {
   .terminal-grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
+    height: auto;
+    min-height: calc(100vh - 200px);
   }
   
   .left-panel {
@@ -102,25 +190,42 @@ canvas {
 
 @media (max-width: 768px) {
   .terminal-main {
-    padding: 16px;
+    padding: 0;
   }
   
   .terminal-grid {
     gap: 16px;
+    padding: 16px;
   }
   
   .panel-content {
     padding: 16px;
   }
+  
+  .metric-value {
+    font-size: 36px;
+  }
+  
+  .media-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .media-logo {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 480px) {
   .terminal-main {
-    padding: 12px;
+    padding: 0;
   }
   
   .terminal-grid {
     gap: 12px;
+    padding: 12px;
   }
   
   .panel-header {
@@ -129,5 +234,14 @@ canvas {
   
   .panel-content {
     padding: 12px;
+  }
+  
+  .metric-value {
+    font-size: 28px;
+  }
+  
+  .media-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
   }
 }
