@@ -1,0 +1,124 @@
+/* Total Media Panel Styles */
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-trend {
+  font-size: 12px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.metric-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+/* Media Logos Grid - 10 logos only */
+.media-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.media-logo {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  border: 1px solid #444;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.media-logo:hover {
+  background: #444;
+  color: #ffffff;
+  border-color: #00ff88;
+}
+
+/* Activity Chart Container */
+.activity-chart-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-chart-container h4 {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.chart-wrapper {
+  flex: 1;
+  position: relative;
+  min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .metric-value {
+    font-size: 36px;
+  }
+  
+  .media-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .media-logo {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-value {
+    font-size: 28px;
+  }
+  
+  .media-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+  
+  .media-logo {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+  }
+}

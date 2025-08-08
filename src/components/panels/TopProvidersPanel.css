@@ -1,0 +1,19 @@
+/* Top Providers Panel Styles */
+.chart-wrapper {
+  flex: 1;
+  position: relative;
+  min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-wrapper {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-wrapper {
+    min-height: 120px;
+  }
+}
